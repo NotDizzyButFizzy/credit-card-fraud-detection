@@ -101,7 +101,5 @@ python fraud_detector.py
 
 ---
 
-## 👥 Contributors
-- [NotDizzyButFizzy](https://github.com/NotDizzyButFizzy) – Project Lead / Developer
-- [HassanUllahShaheen](https://github.com/HassanUllahShaheen) – Developer
+
 - Open for contributions and new feature ideas!
