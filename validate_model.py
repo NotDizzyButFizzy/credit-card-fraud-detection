@@ -1,7 +1,6 @@
 """
 validate_model.py
------------------
-A model validation "gate" for the retraining pipeline.
+A model validation gate for the retraining pipeline.
 
 It retrains the model and checks it clears a minimum performance bar before the
 model is allowed through. If the retrained model is worse than the bar, this
@@ -9,7 +8,7 @@ script exits with an error, which makes the CI/CD pipeline fail and stops a bad
 model from being accepted.
 
 This is the honest core of "continuous deployment for model retraining":
-retrain -> validate against a quality bar -> only accept if it passes.
+retrain to validate against a quality bar to only accept if it passes.
 
 Run it with:  python validate_model.py
 """
