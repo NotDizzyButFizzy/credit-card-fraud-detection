@@ -25,21 +25,6 @@ Anyone joining the project should be able to understand the data pipeline, repli
 
 ---
 
-## ⌨️ Keyboard Shortcuts (Jupyter)
-For anyone working in the notebook environment:
-
-| Shortcut | Action |
-|-----------|---------|
-| **Shift + Enter** | Run a cell |
-| **Ctrl + Enter** | Run a cell without moving to the next |
-| **A / B** | Add cell above/below |
-| **M / Y** | Switch between Markdown and Code mode |
-| **Ctrl + S** | Save checkpoint |
-
-These help navigate and document efficiently while analyzing code.
-
----
-
 ## 🔍 The Process
 
 1. **Data Collection:** Loaded the Kaggle credit card fraud dataset containing anonymized transaction data.  
