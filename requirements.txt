@@ -1,0 +1,14 @@
+# Runtime dependencies
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+joblib
+matplotlib
+seaborn
+jupyter
+notebook
+
+# Development / CI dependencies
+pytest
+flake8
