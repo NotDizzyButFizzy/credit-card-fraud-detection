@@ -130,8 +130,8 @@ This project uses **GitHub Actions** for CI/CD:
 
 ## What I Learnt
 
-- **Why accuracy is misleading on imbalanced data**, and how to read recall, precision, F1 and a confusion matrix instead.
-- **How to handle class imbalance with SMOTE** — and why it must only be applied to the training data to avoid leaking information into evaluation.
+- **Why accuracy is misleading on imbalanced data** and how to read recall, precision, F1 and a confusion matrix instead.
+- **How to handle class imbalance with SMOTE** and why it must only be applied to the training data to avoid leaking information into evaluation.
 - **The precision/recall trade-off** in fraud detection, and how it's ultimately a business decision about the relative cost of missed fraud versus false alarms.
 - **How to structure a project into modules** so the code is reusable, testable, and easy to maintain.
 - **How to write automated tests** and wire them into a **CI/CD pipeline** with GitHub Actions, mirroring how software is shipped in industry.
