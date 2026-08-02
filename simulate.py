@@ -1,14 +1,13 @@
 """
 simulate.py
------------
 A real-time transaction simulation.
 
 It loads the trained model, then streams transactions through it one at a time
-with a short delay, printing a live decision for each one -- like a simplified
+with a short delay, printing a live decision for each one like a simplified
 version of what a payment system does when a card is used.
 
 It is a SIMULATION: the transactions come from the dataset, not a live payment
-feed, but each one is scored in real time by the model exactly as it would be
+feed but each one is scored in real time by the model exactly as it would be
 in production.
 
 Run it with:  python simulate.py   (make sure you have run train.py first)
