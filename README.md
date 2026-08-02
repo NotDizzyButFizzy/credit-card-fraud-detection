@@ -146,7 +146,3 @@ This project uses **GitHub Actions** for CI/CD:
 - Deploy the accepted model to a cloud endpoint (e.g. on AWS) so it can serve predictions over an API.
 - Add monitoring for data drift, so the model is retrained when incoming transactions start to differ from the training data.
 
----
-
-
-- Open for contributions and new feature ideas!
