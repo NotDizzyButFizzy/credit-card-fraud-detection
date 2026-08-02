@@ -5,7 +5,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
 
-A machine learning system that identifies fraudulent credit card transactions in a highly imbalanced dataset — wrapped in production-style engineering: modular code, a real-time scoring simulation, automated tests, and a CI/CD pipeline.
+A machine learning system that identifies fraudulent credit card transactions in a highly imbalanced dataset, wrapped in production-style engineering: modular code, a real-time scoring simulation, automated tests and a CI/CD pipeline.
 
 ---
 
