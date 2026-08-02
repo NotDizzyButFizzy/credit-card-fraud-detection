@@ -37,10 +37,10 @@ This project tackles that head-on. It handles the class imbalance with SMOTE, tr
 - **Random Forest classifier** trained and evaluated on unseen data.
 - **Evaluation focused on recall, precision and F1** rather than misleading accuracy.
 - **Real-time transaction simulation** that streams transactions through the model one at a time and flags fraud live.
-- **Modular codebase** — data preparation, training, and simulation are cleanly separated.
+- **Modular codebase** - data preparation, training, and simulation are cleanly separated.
 - **Automated test suite** run on every push through continuous integration.
 - **Model retraining pipeline** with a validation gate that rejects any model failing to clear a minimum recall and precision bar.
-- **Fully reproducible** — one command installs everything from `requirements.txt`.
+- **Fully reproducible** - one command installs everything from `requirements.txt`.
 
 ---
 
@@ -67,7 +67,7 @@ Measured on the held-out test set. Because the data is imbalanced, the focus is 
 | Matthews Correlation Coefficient | 0.8632 |
 | Accuracy | 0.9996 |
 
-**In plain terms:** when the model flags a transaction as fraud it is right ~97% of the time (very few false alarms), and it catches ~77% of all fraud. The natural next step is to lower the decision threshold to catch more fraud at the cost of a few more false alarms — a deliberate trade-off, since for a bank a missed fraud typically costs more than a declined-then-verified card.
+**In plain terms:** when the model flags a transaction as fraud it is right ~97% of the time (very few false alarms), and it catches ~77% of all fraud. The natural next step is to lower the decision threshold to catch more fraud at the cost of a few more false alarms, a deliberate trade-off, since for a bank a missed fraud typically costs more than a declined-then-verified card.
 
 ---
 
