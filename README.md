@@ -11,9 +11,9 @@ A machine learning system that identifies fraudulent credit card transactions in
 
 ## Overview
 
-Fraud detection is a needle-in-a-haystack problem. In this dataset, fewer than **0.2%** of transactions are fraudulent, which means a model that blindly labels everything "legitimate" would still be 99.8% accurate — while catching zero fraud. Accuracy is a trap here.
+Fraud detection is a needle-in-a-haystack problem. In this dataset, fewer than **0.2%** of transactions are fraudulent, which means a model that blindly labels everything "legitimate" would still be 99.8% accurate, while catching zero fraud. Accuracy is a trap here.
 
-This project tackles that head-on. It handles the class imbalance with SMOTE, trains a Random Forest classifier, and is judged on the metrics that actually matter for a bank: **recall** (how much fraud is caught) and **precision** (how few false alarms are raised). Around the model sits the kind of software engineering used in real production systems — the code is split into clean modules, a live simulation scores transactions one at a time, an automated test suite guards the pipeline, and a CI/CD workflow runs those tests on every push and can retrain and validate the model on demand.
+This project tackles that head-on. It handles the class imbalance with SMOTE, trains a Random Forest classifier, and is judged on the metrics that actually matter for a bank: **recall** (how much fraud is caught) and **precision** (how few false alarms are raised). Around the model sits the kind of software engineering used in real production systems, the code is split into clean modules, a live simulation scores transactions one at a time, an automated test suite guards the pipeline, and a CI/CD workflow runs those tests on every push and can retrain and validate the model on demand.
 
 ---
 
