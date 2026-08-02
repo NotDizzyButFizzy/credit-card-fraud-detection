@@ -3,7 +3,7 @@ train.py
 Trains the fraud-detection model, prints how well it did, and saves it to disk
 so the simulation can reuse it without retraining every time.
 
-Run it with:  python train.py
+Run it with:  python train.p
 """
 
 import os
