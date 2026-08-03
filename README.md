@@ -8,7 +8,7 @@
 
 A machine learning system that identifies fraudulent credit card transactions in a highly imbalanced dataset — wrapped in production-style engineering: modular code, a real-time scoring simulation, automated tests, a CI/CD pipeline, and an interactive web app.
 
-**▶ Try the live demo:** REPLACE_WITH_YOUR_STREAMLIT_LINK — load a transaction and watch the model flag fraud in real time.
+**▶ Try the live demo:** [LIVE DEMO](https://credit-card-fraud-detection-cjb9mtzqdgrmahw8rjn77p.streamlit.app/) — load a transaction and watch the model flag fraud in real time.
 
 ---
 
