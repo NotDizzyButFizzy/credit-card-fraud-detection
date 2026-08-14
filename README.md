@@ -1,7 +1,7 @@
 # Credit Card Fraud Detection
 
 [![CI](https://github.com/NotDizzyButFizzy/credit-card-fraud-detection/actions/workflows/ci.yml/badge.svg)](https://github.com/NotDizzyButFizzy/credit-card-fraud-detection/actions/workflows/ci.yml)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](REPLACE_WITH_YOUR_STREAMLIT_LINK)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://credit-card-fraud-detection-cjb9mtzqdgrmahw8rjn77p.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
 ![pandas](https://img.shields.io/badge/pandas-150458?logo=pandas&logoColor=white)
