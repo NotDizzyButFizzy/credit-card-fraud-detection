@@ -1,11 +1,3 @@
-"""
-data.py
-Everything to do with loading and preparing the data lives here.
-
-Keeping this separate means train.py and simulate.py can both reuse the exact
-same preprocesing without copying and pasting it.
-"""
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -25,16 +17,7 @@ def load_data(path="creditcard.csv"):
 
 
 def preprocess(X, y, test_size=0.2, random_state=42):
-    """
-    Prepare the data for training, in the correct order to avoid data leakage:
-
-      1. Split into train/test FIRST (so the test set stays untouched).
-      2. Fit the scaler on the training data only, then apply it to both.
-      3. Balance the TRAINING data only, using SMOTE.
-
-    Returns the balanced training set, the untouched test set, and the fitted
-    scaler (we need the scaler later to preprocess live transactions).
-    """
+    
     # 1. Split first. stratify=y keeps the same fraud ratio in both halves.
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=test_size, random_state=random_state, stratify=y
