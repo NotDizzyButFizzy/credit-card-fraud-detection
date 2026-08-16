@@ -1,17 +1,3 @@
-"""
-generate_sample_data.py
-Creates a small SYNTHETIC dataset with the same columns as the real Kaggle
-credit-card dataset (Time, V1 to V28, Amount, Class).
-
-Why this exists:
-The real dataset is 150 MB and lives on Kaggle behind a login, so it cant be
-downloaded inside an automated CI pipeline. This script generates a realistic
-stand-in so the whole pipeline can be tested automatically. In a production
-setup, this step would instead pull the real data from cloud storage (e.g. S3).
-
-Run it with:  python generate_sample_data.py
-"""
-
 import numpy as np
 import pandas as pd
 
