@@ -93,3 +93,4 @@ def test_validation_gate_accepts_good_model(tmp_path):
 
     data_path = tmp_path / "creditcard.csv"
     generate_sample_data.generate(n_legit=1500, n_fraud=60, path=str(data_path))
+    assert validate_model.validate(path=str(data_path)) is True
