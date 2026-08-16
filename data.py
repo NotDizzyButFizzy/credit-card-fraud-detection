@@ -3,35 +3,34 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 
-# The two columns that are on a "raw" scale and need standardising.
-# V1..V28 are already scaled (they come from PCA), so we leave them alone.
+
 COLS_TO_SCALE = ["Time", "Amount"]
 
 
 def load_data(path="creditcard.csv"):
     """Load the CSV and split it into features (X) and the target label (y)."""
     df = pd.read_csv(path)
-    X = df.drop("Class", axis=1)   # everything except the label
-    y = df["Class"]                # 0 = legitimate, 1 = fraud
+    X = df.drop("Class", axis=1)   
+    y = df["Class"]                
     return X, y
 
 
 def preprocess(X, y, test_size=0.2, random_state=42):
     
-    # 1. Split first. stratify=y keeps the same fraud ratio in both halves.
+
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=test_size, random_state=random_state, stratify=y
     )
 
-    # 2. Scale. Fit on train, then transform both. Never fit on the test set.
+
     scaler = StandardScaler()
     X_train = X_train.copy()
     X_test = X_test.copy()
     X_train[COLS_TO_SCALE] = scaler.fit_transform(X_train[COLS_TO_SCALE])
     X_test[COLS_TO_SCALE] = scaler.transform(X_test[COLS_TO_SCALE])
 
-    # 3. Balance the training data. Fraud is ~0.2% of rows, so we create
-    #    synthetic fraud examples with SMOTE so the model has enough to learn from.
+
+
     smote = SMOTE(random_state=random_state)
     X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
 
