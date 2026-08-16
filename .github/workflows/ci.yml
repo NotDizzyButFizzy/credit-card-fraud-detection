@@ -1,5 +1,6 @@
 name: CI
 
+# Run automatically on every push and pull request to the main branch.
 on:
   push:
     branches: [ main ]
