@@ -7,8 +7,7 @@ COLUMNS = ["Time"] + [f"V{i}" for i in range(1, 29)] + ["Amount"]
 def generate(n_legit=8000, n_fraud=150, seed=42, path="creditcard.csv"):
     rng = np.random.default_rng(seed)
 
-    # Legitimate and fraudulent transactions come from slightly different
-    # distributions, so the model has a real (but not trivial) signal to learn.
+
     legit = rng.normal(0.0, 1.0, (n_legit, 30))
     fraud = rng.normal(1.6, 1.0, (n_fraud, 30))
 
