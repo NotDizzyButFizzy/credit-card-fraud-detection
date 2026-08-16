@@ -1,9 +1,11 @@
 name: Retrain and Validate Model
 
+# Triggered manually (the "Run workflow" button in the Actions tab) or on a
+# weekly schedule. This is the model-retraining pipeline.
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 3 * * 1"   
+    - cron: "0 3 * * 1"   # every Monday at 03:00 UTC
 
 jobs:
   retrain:
@@ -22,15 +24,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-
+      # In production this step would pull the real dataset from cloud storage
+      # (e.g. an S3 bucket). Here we generate a stand-in so the pipeline runs
+      # end to end without needing the large Kaggle file or any credentials.
       - name: Get training data
         run: python generate_sample_data.py
 
-
+      # Retrain, then validate against the quality bar. If the new model is not
+      # good enough, validate_model.py exits non-zero and this job FAILS, so a
+      # bad model is never accepted.
       - name: Retrain and validate the model
         run: python validate_model.py
 
-
+      # Only reached if validation passed. The accepted model is saved as an
+      # artifact you can download from the workflow run.
       - name: Upload the accepted model
         uses: actions/upload-artifact@v4
         with:
