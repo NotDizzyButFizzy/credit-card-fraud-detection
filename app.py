@@ -16,6 +16,8 @@ Run it with:  streamlit run app.py
 (Make sure you've run `python train.py` first so the model exists.)
 """
 
+import os
+
 import pandas as pd
 import joblib
 import streamlit as st
@@ -32,9 +34,14 @@ def load_artifacts():
 
 
 # @st.cache_data caches the dataset for the same reason.
+# Locally we use the full dataset; when deployed (no big file), we fall back to
+# the small committed sample so the app still has example transactions.
 @st.cache_data
-def load_data(path="creditcard.csv"):
-    return pd.read_csv(path)
+def load_data():
+    for path in ("creditcard.csv", "sample_transactions.csv"):
+        if os.path.exists(path):
+            return pd.read_csv(path)
+    raise FileNotFoundError("No creditcard.csv or sample_transactions.csv found.")
 
 
 def score(transaction, model, scaler):
@@ -68,7 +75,7 @@ except FileNotFoundError:
 try:
     df = load_data()
 except FileNotFoundError:
-    st.error("creditcard.csv not found. Place the dataset in this folder.")
+    st.error("No data found. Add creditcard.csv (local) or sample_transactions.csv.")
     st.stop()
 
 feature_cols = [c for c in df.columns if c != "Class"]
