@@ -7,11 +7,6 @@ It lets you load an example transaction, adjust it, and see the model's fraud
 verdict and probability update live -- a friendly front-end for the same model
 that train.py produces and simulate.py uses.
 
-IMPORTANT (and worth saying in an interview): this works on transactions from
-the dataset, whose V1..V28 features are anonymised. You can't feed it a real
-card transaction, because only the original bank knows how those features are
-calculated. It's a demonstration of the model, not a live fraud checker.
-
 Run it with:  streamlit run app.py
 (Make sure you've run `python train.py` first so the model exists.)
 """
@@ -65,7 +60,6 @@ st.caption(
     "dataset examples, not real card transactions. It demonstrates the model."
 )
 
-# Load the model and data, with friendly messages if they're missing.
 try:
     model, scaler = load_artifacts()
 except FileNotFoundError:
@@ -110,7 +104,7 @@ max_amount = max(3000.0, round(current_amount + 500, 2))
 new_amount = st.slider("Amount (£)", 0.0, max_amount, current_amount)
 tx.loc[0, "Amount"] = new_amount
 
-# Score the (possibly adjusted) transaction.
+
 prediction, probability = score(tx, model, scaler)
 
 st.subheader("3. Model verdict")
