@@ -5,7 +5,6 @@ Everything to do with loading and preparing the data lives here.
 
 Keeping this separate means train.py and simulate.py can both reuse the exact
 same preprocessing without copying and pasting it.
-same preprocesing without copying and pasting it.
 """
 
 import pandas as pd
