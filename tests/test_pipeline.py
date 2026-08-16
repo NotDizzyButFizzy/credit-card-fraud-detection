@@ -3,9 +3,9 @@ Automated tests for the fraud-detection pipeline.
 
 These run on small synthetic data (no Kaggle download needed), so they are fast
 and can run automatically in CI on every push. They check the important
-behaviours: preprocessing balances the data without touching the test set, the
+behaviour preprocessing balances the data without touching the test set, the
 model produces valid predictions, the live scorer returns sensible output, and
-the validation gate accepts a good model.
+the validstion gate accepts a good model.
 """
 
 import numpy as np
